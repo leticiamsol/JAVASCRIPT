@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURSO EM VÍDEO</title>
+    <style>
+        body {
+            font: normal 20px Arial;
+            background-color: rgb(50, 50, 107);
+            color: rgb(238, 243, 248);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema do Curso em Vídeo</h1>
+    Média: <input type="number" name="txtnota" id="txtnota">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="resultado">
+
+    </div>
+    <script>
+        function calcular() {
+            var txtn = window.document.querySelector('input#txtnota')
+            var resultado = window.document.querySelector('div#resultado')
+            var nota = Number(txtn.value)
+            
+            if (nota >= 7) {
+                resultado.innerHTML = `<p>Parabéns! Você foi aprovado com a média <strong>${nota}</strong>.</p>`
+                resultado.innerHTML += `<p>Pegue o seu certificado com 1 crédito.</p>`
+            } 
+            else {
+                resultado.innerHTML = `<p>Ops! Você foi reprovado com a nota <strong>${nota}</strong>.</p>`
+                resultado.innerHTML += `<p>Para ser aprovado, é necessário obter uma pontuação igual ou supeior a "7".</p>`
+            }
+        }
+    </script>
+</body>
+</html>
